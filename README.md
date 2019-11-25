@@ -9,7 +9,8 @@
 - [ ] Relação de perfis de usuários 
 - [ ] Consultas em linguagem natural
 - [x] Diagrama entidade-relacionamento
-- [ ] Modelo relacional
+- [x] Modelo relacional
+- [x] Implementação SQL
 - [ ] Criar exemplos das tabelas
 - [ ] Consultas em SQL
-- [ ] Bibliografia
+- [x] Bibliografia
