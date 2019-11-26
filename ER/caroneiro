@@ -2450,13 +2450,13 @@
     </dia:object>
     <dia:object type="ER - Attribute" version="0" id="O68">
       <dia:attribute name="obj_pos">
-        <dia:point val="0.775,5.7125"/>
+        <dia:point val="-7.225,20.5625"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="0.725,5.6625;4.365,7.5625"/>
+        <dia:rectangle val="-7.275,20.5125;-3.635,22.4125"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="0.775,5.7125"/>
+        <dia:point val="-7.225,20.5625"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="3.54"/>
@@ -2494,6 +2494,25 @@
       <dia:attribute name="font_height">
         <dia:real val="0.80000000000000004"/>
       </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - Line" version="0" id="O69">
+      <dia:attribute name="obj_pos">
+        <dia:point val="-3.99852,20.9002"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="-4.06317,20.1086;-2.05097,20.9648"/>
+      </dia:attribute>
+      <dia:attribute name="conn_endpoints">
+        <dia:point val="-3.99852,20.9002"/>
+        <dia:point val="-2.11562,20.1732"/>
+      </dia:attribute>
+      <dia:attribute name="numcp">
+        <dia:int val="1"/>
+      </dia:attribute>
+      <dia:connections>
+        <dia:connection handle="0" to="O68" connection="8"/>
+        <dia:connection handle="1" to="O11" connection="8"/>
+      </dia:connections>
     </dia:object>
   </dia:layer>
 </dia:diagram>
