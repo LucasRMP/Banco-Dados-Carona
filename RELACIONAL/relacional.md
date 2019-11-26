@@ -1,4 +1,4 @@
-USUARIO(pnome, unome, telefone, email, **cpf**)
+USUARIO(sexo, pnome, unome, telefone, email, **cpf**)
 
 MOTORISTA(num_conta, **cpf**)
 MOTORISTA(cpf) REFERENCES USUARIO(cpf)

@@ -730,13 +730,13 @@
     </dia:object>
     <dia:object type="ER - Attribute" version="0" id="O15">
       <dia:attribute name="obj_pos">
-        <dia:point val="-1.99958,5.56257"/>
+        <dia:point val="-3.14958,5.56257"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-2.04958,5.51257;1.97542,7.41257"/>
+        <dia:rectangle val="-3.19958,5.51257;0.82542,7.41257"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="-1.99958,5.56257"/>
+        <dia:point val="-3.14958,5.56257"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="3.9249999999999998"/>
@@ -2447,6 +2447,53 @@
         <dia:connection handle="0" to="O66" connection="8"/>
         <dia:connection handle="1" to="O2" connection="8"/>
       </dia:connections>
+    </dia:object>
+    <dia:object type="ER - Attribute" version="0" id="O68">
+      <dia:attribute name="obj_pos">
+        <dia:point val="0.775,5.7125"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="0.725,5.6625;4.365,7.5625"/>
+      </dia:attribute>
+      <dia:attribute name="elem_corner">
+        <dia:point val="0.775,5.7125"/>
+      </dia:attribute>
+      <dia:attribute name="elem_width">
+        <dia:real val="3.54"/>
+      </dia:attribute>
+      <dia:attribute name="elem_height">
+        <dia:real val="1.8"/>
+      </dia:attribute>
+      <dia:attribute name="border_width">
+        <dia:real val="0.10000000000000001"/>
+      </dia:attribute>
+      <dia:attribute name="border_color">
+        <dia:color val="#000000ff"/>
+      </dia:attribute>
+      <dia:attribute name="inner_color">
+        <dia:color val="#ffffffff"/>
+      </dia:attribute>
+      <dia:attribute name="name">
+        <dia:string>#sexo#</dia:string>
+      </dia:attribute>
+      <dia:attribute name="key">
+        <dia:boolean val="false"/>
+      </dia:attribute>
+      <dia:attribute name="weak_key">
+        <dia:boolean val="false"/>
+      </dia:attribute>
+      <dia:attribute name="derived">
+        <dia:boolean val="false"/>
+      </dia:attribute>
+      <dia:attribute name="multivalued">
+        <dia:boolean val="false"/>
+      </dia:attribute>
+      <dia:attribute name="font">
+        <dia:font family="monospace" style="0" name="Courier"/>
+      </dia:attribute>
+      <dia:attribute name="font_height">
+        <dia:real val="0.80000000000000004"/>
+      </dia:attribute>
     </dia:object>
   </dia:layer>
 </dia:diagram>
