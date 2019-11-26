@@ -1,5 +1,21 @@
 Que passageiro pegou carona no local de partida "***" na data de "***" ?
 Que passageiro pegou carona no veículo de placa "***" e tipo "***" ?
 Que passageiro pegou carona com o motorista "***" ?
+<<<<<<< HEAD
 Que passageiro pegou carona com um veículo com a manutenção feita a mais de 6 meses atrás?
 Que passageiro denunciou o motorista "***" ?
+=======
+Que passageiro pegou carona cuja manutenção do veículo "***" foi na data "***" ?
+Que passageiro denunciou o motorista "***" ?
+Que passageiro denunciado alguma vez fez uma denúncia a um motorista?
+Que passageiro foi denunciado mais de uma vez?
+Que passageiro pegou carona com um veículo que que não fez nenhuma manuntenção?
+Que passageiro pegou mais 5 caronas na última semana?
+Que passageiro pegou carona cujo veículo ultilizado fez uma manutenção cuja descrição envolveu a palavra "ignição"?
+Que passageiro pegou carona cuja a mesma teve custo entre R$20,00 e R$100,00 em que a avaliação feita por ele foi maior que 1?
+Que passageiro pegou carona cujo o tipo do veículo utilizado foi "***" e a avaliação da mesma foi maior que 4?
+Que passageiro avaliou todos as suas caronas caronas com notas menor ou igual a 3 cuja os motoristas obtiveram avaliações maior que 4 em todas as caronas dirigidas por eles?
+Que passageiro do sexo feminino denunciou algum motorista do sexo masculino tendo alguma denuncia feita por um motorista do sexo msculino?
+Que passageiro do sexo masculino pegou mais carona do que todos outros passageiros do sexo feminimo no último mês?
+Os passageiros do sexo masculino pegaram mais carona do que do sexo feminimo na última semana? 
+>>>>>>> f5acd91ee4cff3eca585407878e382d89d71f75f
