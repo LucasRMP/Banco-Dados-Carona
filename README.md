@@ -1,6 +1,6 @@
 # Banco Dados Carona
 
-![Modelo Entidade Relacionamento do Banco](https://photos.google.com/share/AF1QipNfTnBbw1HW9_p6mYqBbpPULAjT_MO-O1f12SHvFTuRcv1ckbzg8nRzht5374zJTg/photo/AF1QipNOznI1Xoho0oradaw9mlI4xAUOo-USL5edeqk?key=d1FSX3dhRkU1Vmp4WE5IdHRFaFRkTXlkV0syWHBB)
+![Modelo Entidade Relacionamento do Banco](./ER/caroneiro.png)
 
 
 ## Objetivos
