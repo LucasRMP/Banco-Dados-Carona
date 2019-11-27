@@ -3,50 +3,50 @@ create database CARONEIRO;
 use CARONEIRO;
 
 create table USUARIO(
-  id      char(11) not null,
+  cpf      char(11) not null,
   sexo     char(1) not null,
   pnome    varchar(30) not null,
   unome    varchar(30) not null,
   telefone char(11),
   email    varchar(40) not null,
 
-  primary key (id)
+  primary key (cpf)
 ) ENGINE=InnoDB;
 
 create table DENUNCIA (
-  id_denunciado char(11) not null,
-  id_denunciou  char(11) not null,
+  cpf_denunciado char(11) not null,
+  cpf_denunciou  char(11) not null,
   descricao      varchar(60) not null,
 
-  primary key (id_denunciado, id_denunciou),
-  foreign key (id_denunciado) references USUARIO(id),
-  foreign key (id_denunciou)  references USUARIO(id)
+  primary key (cpf_denunciado, cpf_denunciou),
+  foreign key (cpf_denunciado) references USUARIO(cpf),
+  foreign key (cpf_denunciou)  references USUARIO(cpf)
 ) ENGINE=InnoDB;
 
 create table MOTORISTA (
-  id       char(11) not null,
+  cpf       char(11) not null,
   num_conta char(16) not null,
 
-  primary key (id),
-  foreign key (id) references USUARIO(id)
+  primary key (cpf),
+  foreign key (cpf) references USUARIO(cpf)
 ) ENGINE=InnoDB;
 
 create table PASSAGEIRO (
-  id        char(11) not null,
+  cpf        char(11) not null,
   num_cartao char(16) not null,
 
-  primary key (id),
-  foreign key (id) references USUARIO(id)
+  primary key (cpf),
+  foreign key (cpf) references USUARIO(cpf)
 ) ENGINE=InnoDB;
 
 create table VEICULO (
-  id     char(7) not null,
+  placa     char(7) not null,
   nome      varchar(30),
   categoria varchar(20),
-  id_dono  char(11) not null,
+  cpf_dono  char(11) not null,
 
-  primary key (id),
-  foreign key (id_dono) references MOTORISTA(id)
+  primary key (placa),
+  foreign key (cpf_dono) references MOTORISTA(cpf)
 ) ENGINE=InnoDB;
 
 create table MANUTENCAO (
@@ -56,22 +56,23 @@ create table MANUTENCAO (
   placa_veiculo   char(7) not null,
 
   primary key (data_realizacao, placa_veiculo),
-  foreign key (placa_veiculo) references VEICULO(id)
+  foreign key (placa_veiculo) references VEICULO(placa)
 ) ENGINE=InnoDB;
 
 create table CARONA (
-  id_motorista   char(11) not null,
-  id_passageiro  char(11) not null,
-  data_corrida    date not null,
+  cpf_motorista   char(11) not null,
+  cpf_passageiro  char(11) not null,
+  data_corrcpfa   date not null,
   placa_veiculo   char (7) not null,
   av_motorista    float(2,1) not null,
   av_passageiro   float(2,1) not null,
   duracao         time,
+  custo           float(6,2),
   local_partida   varchar(100) not null,
   local_destino   varchar(100) not null,
 
-  primary key (id_motorista, id_passageiro, data_corrida),
-  foreign key (id_motorista) references USUARIO(id),
-  foreign key (id_motorista) references USUARIO(id),
-  foreign key (placa_veiculo) references VEICULO(id)
+  primary key (cpf_motorista, cpf_passageiro, data_corrcpfa),
+  foreign key (cpf_motorista) references USUARIO(cpf),
+  foreign key (cpf_motorista) references USUARIO(cpf),
+  foreign key (placa_veiculo) references VEICULO(placa)
 ) ENGINE=InnoDB;

@@ -98,4 +98,4 @@ INSERT INTO DENUNCIA VALUES
 ('49232215103','49232215103','Her first idea was that it seemed quite natural); but when.'),
 ('49288613638','49288613638','All this time the Queen furiously, throwing an inkstand at.'),
 ('49408560287','49408560287','I know? said Alice, and she tried to curtsey as she.'),
-('49450308043','49450308043','Therefore Im mad. I call it purring, not growling,.'); 
+('49450308043','49450308043','Therefore Im mad. I call it purring, not growling,.');

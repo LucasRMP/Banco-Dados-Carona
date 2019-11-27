@@ -198,4 +198,6 @@ INSERT INTO USUARIO VALUES
 ('98193321459', 'f', 'Eileen','mcClure','38460569663','albin.fay@example.com'),
 ('98283997385', 'f', 'Natalie','Kulas','91435757983','ciara13@example.org'),
 ('98518940599', 'f', 'finn','Considine','83949598131','ledner.eugenia@example.com'),
-('99772360465', 'f', 'Dorthy','Braun','73104326261','daphney.kshlerin@example.com'); 
+('99772360465', 'f', 'Dorthy','Braun','73104326261','daphney.kshlerin@example.com'), 
+('11111111111', 'm', 'Lucas','Braun','73104326261','lucas.rmagalhaes@gmail.com'),
+('99999999999', 'm', 'Pablo','Braun','73104326261','lucas.rmagalhaes@gmail.com'); 
