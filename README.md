@@ -2,12 +2,11 @@
 
 ![Modelo Entidade Relacionamento do Banco](./ER/caroneiro.png)
 
-
 ## Objetivos
-- [ ] Identificação
-- [ ] Descrição
-- [ ] Relação de perfis de usuários 
-- [ ] Consultas em linguagem natural
+- [x] Identificação
+- [x] Descrição
+- [x] Relação de perfis de usuários 
+- [x] Consultas em linguagem natural
 - [x] Diagrama entidade-relacionamento
 - [x] Modelo relacional
 - [x] Implementação SQL
