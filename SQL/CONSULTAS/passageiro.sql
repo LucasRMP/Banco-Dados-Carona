@@ -1,41 +1,5 @@
 -- ========================== PASSAGEIROS ========================== --
 
--- -------------------- BUSCAS AUXILIARES ----------------------------
-
--- lista de cpf dos motoristas
-select cpf
-from MOTORISTA;
-
--- lista de cpf dos passageiros
-select cpf
-from PASSAGEIRO;
-
--- lista de cpf que fizeram manutenção no ultimo mês
-select cpf_dono
-from MANUTENCAO inner join VEICULO
-on MANUTENCAO.placa_veiculo = VEICULO.placa
-where datediff( now(), MANUTENCAO.data_realizacao ) <= 30;
-
--- cpf de todos os motoristas que deram carona
-select distinct M.cpf
-from MOTORISTA as M 
-inner join CARONA as C on C.cpf_motorista = M.cpf;
-
--- ultima manutenção de um veículo
-select max(M.data_realizacao)
-from MANUTENCAO as M 
-inner join VEICULO as V on M.placa_veiculo = V.placa
-where V.placa = 'PQN3609';
-
--- quantas caronas um usuario fez na ultima semana
-select count(*)
-from USUARIO
-inner join CARONA on USUARIO.cpf = CARONA.cpf_passageiro
-where USUARIO.cpf = '11443031496' and datediff(now(), CARONA.data_corrida) <= 7;
-
-
--- ---------------------- BUSCAS FINAIS ------------------------------
-
 -- 1 - Que passageiro pegou carona no local de partida "***" na data de "***" ?
 select U.cpf, U.pnome, U.unome
 from USUARIO as U
@@ -122,10 +86,39 @@ inner join MANUTENCAO as M on M.placa_veiculo = V.placa
 where M.descricao like "%ignição%";
 
 -- 11 - Que passageiro pegou carona cuja a mesma teve custo entre R$20,00 e R$100,00 em que a avaliação feita por ele foi maior que 1?
-
+select P.cpf, U.pnome, U.unome, U.sexo
+from PASSAGEIRO as P 
+inner join USUARIO as U on U.cpf = P.cpf
+inner join CARONA as C on C.cpf_passageiro = P.cpf
+where C.custo between 20.00 and 100.00
+and C.av_motorista > 1;
 
 -- 12 - Que passageiro pegou carona cujo o tipo do veículo utilizado foi "***" e a avaliação da mesma foi maior que 4?
--- 13 - Que passageiro avaliou todos as suas caronas caronas com notas menor ou igual a 3 cuja os motoristas obtiveram avaliações maior que 4 em todas as caronas dirigidas por eles?
--- 14 - Que passageiro do sexo feminino denunciou algum motorista do sexo masculino tendo alguma denuncia feita por um motorista do sexo msculino?
--- 15 - Que passageiro do sexo masculino pegou mais carona do que todos outros passageiros do sexo feminimo no último mês?
--- 16 - Os passageiros do sexo masculino pegaram mais carona do que do sexo feminimo na última semana?
+select distinct C.cpf_passageiro, U.pnome, U.unome, U.sexo 
+from CARONA as C
+inner join USUARIO as U on U.cpf = C.cpf_passageiro
+inner join VEICULO as V on C.placa_veiculo = V.placa
+where V.categoria = '***';
+
+-- 13 - Qual é a media das avaliações dadas por passageiros por sexo?
+select U.sexo, avg(C.av_motorista) as 'média'
+from CARONA as C
+inner join USUARIO as U on U.cpf = C.cpf_passageiro
+group by U.sexo;
+
+-- 14 - Qual é o tempo mais rapido, mais lento e o tempo medio de chegada de um passageiro no seu destino?
+select min(C.duracao), max(C.duracao), avg(C.duracao)
+from CARONA as C;
+
+-- 15 - Quantas passageiras registraram denuncias que envolvem assédio, estupro ou teor sexual no último ano?
+select count(distinct cpf_denunciou) as 'quantidade'
+from DENUNCIA as D
+inner join USUARIO as U on U.cpf = cpf_denunciou
+where (D.descricao like '%assédio%' or D.descricao like '%estupro%' or '%sexual%') 
+and U.sexo = 'F';
+
+-- 16 - Quantas caronas homens e mulheres pegaram na ultima semana?
+select U.sexo as 'sexo', count(*) as 'quantidade'
+from CARONA as C 
+inner join USUARIO as U on C.cpf_passageiro = U.cpf
+group by U.sexo;

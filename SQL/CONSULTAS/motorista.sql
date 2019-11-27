@@ -1,38 +1,5 @@
 --========================== MOTORISTA ==========================--
 
----------------------- BUSCAS AUXILIARES ----------------------------
-
--- lista de cpf dos motoristas
-select cpf
-from MOTORISTA;
-
--- lista de cpf dos passageiros
-select cpf
-from PASSAGEIRO;
-
--- lista de cpf que fizeram manutenção no ultimo mês
-select cpf_dono
-from MANUTENCAO inner join VEICULO
-on MANUTENCAO.placa_veiculo = VEICULO.placa
-where datediff( now(), MANUTENCAO.data_realizacao ) <= 30;
-
--- lista de cpf de motoristas que fizeram alguma corrida
-select distinct cpf_motorista from CARONA;
-
--- lista de cpf de passageiros que fizeram denuncias contra motoristas
-select distinct P.cpf 
-from PASSAGEIRO as P
-inner join DENUNCIA as D on P.cpf = D.cpf_denunciou
-inner join MOTORISTA as M on M.cpf = D.cpf_denunciado; 
-
--- menor preço de caronas feitas por homens com duração x
-select min(C.custo)
-from CARONA as C 
-inner join USUARIO as M on C.cpf_motorista = M.cpf
-where M.sexo = 'M' and duracao = '01:00:00';
-
------------------------- BUSCAS FINAIS ------------------------------
-
 -- 1 - Que motorista fez manuntenção no seu carro no último mês?
 select U.cpf, U.pnome, U.unome, M.num_conta
 from USUARIO as U inner join MOTORISTA as M
