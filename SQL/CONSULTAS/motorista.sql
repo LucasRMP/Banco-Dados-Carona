@@ -120,6 +120,8 @@ inner join USUARIO as U on U.cpf = M.cpf
 group by U.sexo;
 
 -- 15 - Que motorista dirigiu carona somente para passageiros do mesmo sexo que o seu?
-select M.cpf
-from MOTORISTA as M 
-
+select M.cpf, M.pnome, M.unome, M.sexo
+from CARONA as C 
+inner join USUARIO as M on M.cpf = C.cpf_motorista
+inner join USUARIO as P on P.cpf = C.cpf_passageiro
+where M.sexo = P.sexo;
