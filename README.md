@@ -11,5 +11,5 @@
 - [x] Modelo relacional
 - [x] Implementação SQL
 - [ ] Criar exemplos das tabelas
-- [ ] Consultas em SQL
+- [x] Consultas em SQL
 - [x] Bibliografia
