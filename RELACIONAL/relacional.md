@@ -1,21 +1,21 @@
-USUARIO(sexo, pnome, unome, telefone, email, **cpf**)
+USER(**id**, sex, fname, lname, phone, email)
 
-MOTORISTA(num_conta, **cpf**)
-MOTORISTA(cpf) REFERENCES USUARIO(cpf)
+DRIVER(bank_account, **id**)
+DRIVER(id) REFERENCES USUARIO(id)
 
-PASSAGEIRO(num_cartao, **cpf**)
-PASSAGEIRO(cpf) REFERENCES USUARIO(cpf)
+RIDER(card_number, **id**)
+RIDER(id) REFERENCES USUARIO(id)
 
-CARONA(**cpf_motorista**, **cpf_passageiro**, **data_corrida**, av_passageiro, av_motorista, placa_veiculo, custo, duracao, local_destino, local_partida)
-CARONA(cpf_motorista) REFERENCES MOTORISTA(cpf)
-CARONA(cpf_passageiro) REFERENCES PASSAGEIRO(cpf)
+RIDE(**id_driver**, **id_rider**, **ride_date**, rider_rating, driver_rating, vehicle_plate, price, duration, where_to, where_from)
+RIDE(id_driver) REFERENCES DRIVER(id)
+RIDE(id_rider) REFERENCES RIDER(id)
 
-VEICULO(nome, categoria, **placa**, cpf_dono)
-VEICULO(cpf_dono) REFERENCES MOTORISTA(cpf)
+VEHICLE(vehicle_name, category, **plate**, owner_id)
+VEHICLE(owner_id) REFERENCES DRIVER(id)
 
-MANUTENCAO(tipo, descricao, **data_realizacao**, **placa_veiculo**)
-MANUTENCAO(placa) REFERENCES VEICULO(placa)
+MAINTENCE(maintence_type, report, **maintence_date**, **vehicle_plate**)
+MAINTENCE(vehicle_plate) REFERENCES VEHICLE(plate)
 
-DENUNCIA(descricao, **cpf_denunciado**, **cpf_denunciou**)
-DENUNCIA(cpf_denunciado) REFERENCES USUARIO(cpf)
-DENUNCIA(cpf_denunciou) REFERENCES USUARIO(cpf)
+REPORT(report, **reported_id**, **reporter_id**)
+REPORT(reported_id) REFERENCES USUARIO(id)
+REPORT(reporter_id) REFERENCES USUARIO(id)
