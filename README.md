@@ -10,6 +10,6 @@
 - [x] Diagrama entidade-relacionamento
 - [x] Modelo relacional
 - [x] Implementação SQL
-- [ ] Criar exemplos das tabelas
+- [x] Criar exemplos das tabelas
 - [x] Consultas em SQL
 - [x] Bibliografia
